@@ -10,7 +10,7 @@ the assemblies are available on disk.
 
 This SDK also allows for easy consumption / updating of NuGet assets directly within a project
 ([details below](#nuget-outputs)) and support for writing and using analyzers, or, more importantly,
-source generators ([details below)](#source-generators)), without breaking out of `Assets/` if desired.
+source generators ([details below](#source-generators)), without breaking out of `Assets/` if desired.
 
 This does not supplant asmdef files. The source code would still be consumed by Unity unless placed
 in a Unity-ignored directory (in which case, yes: besides specific reflection / code generation e.g. for ECS not
