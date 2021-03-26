@@ -122,8 +122,8 @@ When the `PackageDependencyOutputDirectory` property is set, a project will outp
 NuGet packages it references to the specified directory. This may be useful in writing code entirely
 inside a generic .NET ecosystem while explicitly producing assemblies/etc from the packages that Unity projects
 are informed of as well. It can also be a fairly neat way of managing NuGet dependencies in general, using a
-single csproj to track the packages, provided that you run `dotnet restore` whenever you change the dependencies
-and manually delete any files left over from unused packages.
+single csproj to track the packages, provided that you run `dotnet build` whenever you change the dependencies
+and manually delete any files left over from removed packages.
 
 ## Source Generators
 
