@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.Build.NoTargets/2.0.17">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Description>Provides convenience for code that will be consumed by Unity projects.</Description>
+        <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+        <PackageTags>MSBuild MSBuildSdk</PackageTags>
+        <ArtifactsPath>$(BaseArtifactsPath)\$(MSBuildProjectName)\</ArtifactsPath>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageType>MSBuildSdk</PackageType>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageVersion>1.0.0</PackageVersion>
+    </PropertyGroup>
+</Project>

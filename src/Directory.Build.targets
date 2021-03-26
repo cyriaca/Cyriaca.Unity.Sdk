@@ -1,0 +1,15 @@
+<Project>
+      <PropertyGroup>
+            <Authors>Cyriaca</Authors>
+            <Company>Cyriaca</Company>
+            <RepositoryUrl>https://github.com/cyriaca/Cyriaca.Unity.Sdk</RepositoryUrl>
+      </PropertyGroup>
+      <ItemGroup Condition="'$(IsPackable)' == 'true'">
+            <None Include="Sdk\**" Pack="true" PackagePath="Sdk\" />
+            <None Include="README.md" />
+            <None Include="version.json" />
+            <None Include="$(PackageLicensePath)" Pack="true" PackagePath="$(PackageLicenseFile)" Visible="false" />
+
+            <None Include="$(PackageIconPath)" Pack="true" PackagePath="\" Visible="false" />
+      </ItemGroup>
+</Project>

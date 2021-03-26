@@ -1,0 +1,15 @@
+<Project>
+    <ItemGroup>
+        <Reference Include="@(UnityReference->'$(UnityDirectory)\$(Unity)\$(UnitySubDirectory)\%(Location)\%(Identity).dll')" Private="%(Private)"/>
+        <Reference Include="@(UnityDirectReference->'$(UnityDirectory)\$(Unity)\$(UnitySubDirectory)\%(Identity)')" Private="%(Private)"/>
+
+        <Reference Include="@(UnityProjectReference->'$(UnityProject)\%(Location)\%(Identity).dll')" Private="%(Private)"/>
+        <Reference Include="@(UnityDirectProjectReference->'$(UnityProject)\%(Identity)')" Private="%(Private)"/>
+        
+        <Reference Include="@(UnityPackageCacheReference->'$(UnityProject)\Library\PackageCache\%(Location)\%(Identity).dll')" Private="%(Private)"/>
+        <Reference Include="@(UnityDirectPackageCacheReference->'$(UnityProject)\Library\PackageCache\%(Identity)')" Private="%(Private)"/>
+        
+        <Reference Include="@(UnityScriptAssemblyReference->'$(UnityProject)\Library\ScriptAssemblies\%(Location)\%(Identity).dll')" Private="%(Private)"/>
+        <Reference Include="@(UnityDirectScriptAssemblyReference->'$(UnityProject)\Library\ScriptAssemblies\%(Identity)')" Private="%(Private)"/>
+    </ItemGroup>
+</Project>

@@ -1,0 +1,17 @@
+<Project>
+    <Import Project="Sdk.Post.props" />
+    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+
+    <Target Name="CopyPackageDependencyFiles" AfterTargets="Build" Condition="'$(PackageDependencyOutputDirectory)' != ''">
+        <ItemGroup>
+            <DependencyFiles Include="@(RuntimeCopyLocalItems)"
+                             Condition="'%(RuntimeCopyLocalItems.CopyLocal)' == 'true'"/>
+            <DependencyFiles Include="@(ResourceCopyLocalItems)"
+                             Condition="'%(ResourceCopyLocalItems.CopyLocal)' == 'true'"/>
+            <DependencyFiles Include="@(RuntimeTargetsCopyLocalItems)"
+                             Condition="'%(RuntimeTargetsCopyLocalItems.CopyLocal)' == 'true'"/>
+        </ItemGroup>
+        <Copy SourceFiles="@(DependencyFiles)" SkipUnchangedFiles="true" DestinationFiles="$(PackageDependencyOutputDirectory)\%(DependencyFiles.DestinationSubPath)"/>
+        <Copy SourceFiles="@(Content)" SkipUnchangedFiles="true" DestinationFolder="$(PackageDependencyOutputDirectory)\%(Content.DestinationSubDirectory)"/>
+    </Target>
+</Project>

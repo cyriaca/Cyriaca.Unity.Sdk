@@ -1,0 +1,16 @@
+﻿<Project Sdk="Cyriaca.Unity.Sdk/1.0.0">
+
+    <PropertyGroup>
+        <Unity>2021.1.0b4</Unity>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <UnityReference Include="UnityEngine"/>
+        <PackageReference Include="NLayer" Version="1.13.0"/>
+    </ItemGroup>
+
+    <PropertyGroup>
+        <PackageDependencyOutputDirectory>test/</PackageDependencyOutputDirectory>
+    </PropertyGroup>
+
+</Project>

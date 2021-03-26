@@ -1,0 +1,43 @@
+<Project>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+    <PropertyGroup Condition="$([MSBuild]::IsOsPlatform(Windows))">
+        <UnityDirectory>C:\Program Files\Unity\Hub\Editor</UnityDirectory>
+        <UnitySubDirectory>Editor\Data</UnitySubDirectory>
+    </PropertyGroup>
+    <PropertyGroup Condition="$([MSBuild]::IsOsPlatform(OSX))">
+        <UnityDirectory>/Applications/Unity/Hub/Editor</UnityDirectory>
+        <UnitySubDirectory>Unity.app/Contents</UnitySubDirectory>
+    </PropertyGroup>
+    <ItemDefinitionGroup>
+        <UnityReference>
+            <Location>Managed</Location>
+            <Private>false</Private>
+        </UnityReference>
+        <UnityDirectReference>
+            <Private>false</Private>
+        </UnityDirectReference>
+        
+        <UnityProjectReference>
+            <Private>false</Private>
+        </UnityProjectReference>
+        <UnityDirectProjectReference>
+            <Private>false</Private>
+        </UnityDirectProjectReference>
+        
+        <UnityPackageCacheReference>
+            <Private>false</Private>
+        </UnityPackageCacheReference>
+        <UnityDirectPackageCacheReference>
+            <Private>false</Private>
+        </UnityDirectPackageCacheReference>
+        
+        <UnityScriptAssemblyReference>
+            <Private>false</Private>
+        </UnityScriptAssemblyReference>
+        <UnityDirectScriptAssemblyReference>
+            <Private>false</Private>
+        </UnityDirectScriptAssemblyReference>
+    </ItemDefinitionGroup>
+</Project>
