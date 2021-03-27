@@ -17,8 +17,8 @@ in a Unity-ignored directory (in which case, yes: besides specific reflection / 
 working, you could output your own assemblies along with any NuGet package assets you need, however, asmdefs
 are what you need if you just want to split up your code).
 
-To use this SDK, replace the `Sdk` attribute (or nested element) of your root `Project` element with `Cyriaca.Unity.Sdk/1.0.0`,
-e.g. `<Project Sdk="Cyriaca.Unity.Sdk/1.0.0">`.
+To use this SDK, replace the `Sdk` attribute (or nested element) of your root `Project` element with `Cyriaca.Unity.Sdk/1.1.0`,
+e.g. `<Project Sdk="Cyriaca.Unity.Sdk/1.1.0">`.
 
 # Properties
 
