@@ -11,6 +11,13 @@
             <DependencyFiles Include="@(RuntimeTargetsCopyLocalItems)"
                              Condition="'%(RuntimeTargetsCopyLocalItems.CopyLocal)' == 'true'"/>
         </ItemGroup>
+        <ItemGroup Condition="'$(PackageDependencyIncludeDocumentation)' == 'true'">
+            <RuntimeCopyLocalItemDocumentations Include="@(RuntimeCopyLocalItems->'%(RelativeDir)%(Filename).xml')"
+                             DestinationSubPath="$([System.IO.Path]::GetFileNameWithoutExtension(%(RuntimeCopyLocalItems.DestinationSubPath))).xml"
+                             Condition="'%(CopyLocal)' == 'true'"/>
+            <DependencyFiles Include="@(RuntimeCopyLocalItemDocumentations)"
+                             Condition="Exists(%(Identity))"/>
+        </ItemGroup>
         <Copy SourceFiles="@(DependencyFiles)" SkipUnchangedFiles="true" DestinationFiles="$(PackageDependencyOutputDirectory)\%(DependencyFiles.DestinationSubPath)"/>
         <Copy SourceFiles="@(Content)" SkipUnchangedFiles="true" DestinationFolder="$(PackageDependencyOutputDirectory)\%(Content.DestinationSubDirectory)"/>
     </Target>

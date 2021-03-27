@@ -1,16 +1,18 @@
-﻿<Project Sdk="Cyriaca.Unity.Sdk/1.0.0">
+﻿<Project Sdk="Cyriaca.Unity.Sdk/1.1.0">
 
     <PropertyGroup>
-        <Unity>2021.1.0b4</Unity>
+        <Unity>2021.1.0b12</Unity>
     </PropertyGroup>
 
     <ItemGroup>
         <UnityReference Include="UnityEngine"/>
         <PackageReference Include="NLayer" Version="1.13.0"/>
+        <PackageReference Include="System.Memory" Version="4.5.4"/>
     </ItemGroup>
 
     <PropertyGroup>
-        <PackageDependencyOutputDirectory>test/</PackageDependencyOutputDirectory>
+        <PackageDependencyOutputDirectory>$(MSBuildThisFileDirectory)\..\test</PackageDependencyOutputDirectory>
+        <PackageDependencyIncludeDocumentation>true</PackageDependencyIncludeDocumentation>
     </PropertyGroup>
 
 </Project>

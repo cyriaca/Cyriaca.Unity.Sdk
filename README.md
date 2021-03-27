@@ -45,6 +45,11 @@ User-defined, required by some ItemGroup proxies.
 ## PackageDependencyOutputDirectory
 
 Optional target directory to copy PackageReference assets (assemblies, resources) to.
+No-op if not set.
+
+## PackageDependencyIncludeDocumentation
+
+If true, also exports XML documentation files found next to package assemblies.
 
 # ItemGroups
 
