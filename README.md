@@ -123,6 +123,16 @@ Requires `UnityProject` property.
 
 ## NuGet Outputs
 
+### Primary Method - Cdproj
+
+The [Cdproj](https://github.com/cyriaca/Cdproj) UPM package provides a less verbose way to manage NuGet dependencies.
+This package creates a new Editor function, `Tools/Cdproj/Reload NuGet dependencies`.
+Base-level folders, Packages folders, and Library/PackageCache folders are searched for `.cdproj` files that
+contain the NuGet package references needed in your project. All of these are fed into a common csproj that
+outputs dependencies to `Assets/CdprojNuGet`.
+
+### Fallback Method - PackageDependencyOutputDirectory
+
 When the `PackageDependencyOutputDirectory` property is set, a project will output the artifacts for the
 NuGet packages it references to the specified directory. This may be useful in writing code entirely
 inside a generic .NET ecosystem while explicitly producing assemblies/etc from the packages that Unity projects
