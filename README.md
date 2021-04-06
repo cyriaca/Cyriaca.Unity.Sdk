@@ -127,9 +127,10 @@ Requires `UnityProject` property.
 
 The [Cdproj](https://github.com/cyriaca/Cdproj) UPM package provides a less verbose way to manage NuGet dependencies.
 This package creates a new Editor function, `Tools/Cdproj/Reload NuGet dependencies`.
-Base-level folders, Packages folders, and Library/PackageCache folders are searched for `.cdproj` files that
-contain the NuGet package references needed in your project. All of these are fed into a common csproj that
-outputs dependencies to `Assets/CdprojNuGet`.
+Cdproj invokes `dotnet build <path_to_Cdproj.csproj>` to output NuGet files to `Assets/CdprojNuGet`.
+`Cdproj.csproj` searches base-level folders, Packages folders, and Library/PackageCache folders for `.cdproj` files that
+contain the PackageReference items needed in your project.
+
 
 ### Fallback Method - PackageDependencyOutputDirectory
 
